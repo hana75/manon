@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manon Leconte-Dauris – Product designer</title>
+<meta name="description" content="Portfolio de Manon Leconte-Dauris, product designer : recherche utilisateur, design d’interface et design system.">
+<meta property="og:title" content="Manon Leconte-Dauris – Product designer">
+<meta property="og:description" content="Je conçois des produits clairs, utiles et agréables à utiliser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7EFF1; --surface:#FFFBFC; --ink:#2B1A33; --muted:#6F5B74; --line:#E6D6DC;
+  --accent:#C2305F; --accent-ink:#FFFFFF; --soft:#F9D9E3;
+  color-scheme:light;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased;transition:background .3s}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.5vw,3.25rem);font-weight:800;margin-bottom:2.5rem;max-width:18ch}
+
+/* Nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-weight:500}
+nav .links{display:flex;gap:1.75rem}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.mark{font-family:var(--display);font-weight:800;font-size:1.15rem}
+
+/* Hero */
+.hero{padding:clamp(3rem,9vw,7rem) 0 clamp(3rem,7vw,5rem)}
+.hero h1{font-size:clamp(3.2rem,11.5vw,9.5rem);font-weight:800;letter-spacing:-.045em;line-height:.9}
+.hero h1 span{display:block;color:var(--accent);transition:color .3s}
+.hero-row{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;margin-top:3rem;align-items:end}
+.hero p.lead{font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.4;max-width:34ch;font-family:var(--display);font-weight:400}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.75rem}
+.btn{display:inline-block;padding:.85rem 1.4rem;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none;transition:transform .15s,background .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.theme{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.25rem 1.4rem}
+.theme b{font-family:var(--display);font-size:1.05rem}
+.theme p{color:var(--muted);font-size:.95rem;margin:.25rem 0 .9rem}
+.swatches{display:flex;gap:.6rem}
+.swatches button{width:2.4rem;height:2.4rem;border-radius:50%;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--line);cursor:pointer;transition:box-shadow .15s}
+.swatches button[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ink)}
+
+section{padding:clamp(3.5rem,8vw,6.5rem) 0}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+
+/* Projets */
+.cases{display:grid;gap:2rem}
+.case{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(1rem,2.5vw,1.75rem)}
+.case:nth-child(even){grid-template-columns:1fr 1.15fr}
+.case:nth-child(even) .shot{order:2}
+.shot{aspect-ratio:4/3;border-radius:18px;background:var(--soft);position:relative;overflow:hidden;transition:background .3s}
+.case h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:.75rem}
+.case p{color:var(--muted);margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem;list-style:none;padding:0}
+.tags li{font-size:.9rem;font-weight:500;padding:.25rem .75rem;border:1px solid var(--line);border-radius:999px}
+.result{font-family:var(--display);font-weight:600;font-size:1.1rem;padding-left:1rem;border-left:4px solid var(--accent);transition:border-color .3s}
+/* Maquettes en CSS : à remplacer par des captures */
+.phone{position:absolute;width:34%;height:78%;background:var(--surface);border-radius:20px;box-shadow:0 10px 30px rgba(43,26,51,.18);padding:12px;display:flex;flex-direction:column;gap:8px}
+.phone i{display:block;border-radius:6px;background:var(--soft)}
+.phone i.a{background:var(--accent);height:34%}
+.phone i.b{height:12%}.phone i.c{height:12%;width:70%}.phone i.d{height:16%}
+.p1{left:14%;top:12%;transform:rotate(-5deg)}.p2{right:14%;top:10%;transform:rotate(4deg)}
+.dash{position:absolute;inset:14% 10%;background:var(--surface);border-radius:14px;box-shadow:0 10px 30px rgba(43,26,51,.18);padding:14px;display:grid;grid-template-columns:22% 1fr;gap:12px}
+.dash .side{background:var(--soft);border-radius:8px}
+.dash .main{display:grid;grid-template-rows:auto 1fr;gap:10px}
+.dash .bars{display:flex;align-items:flex-end;gap:7%;padding:0 4%}
+.dash .bars i{flex:1;background:var(--accent);border-radius:5px 5px 0 0;transition:background .3s}
+.dash .top{height:16px;width:50%;background:var(--soft);border-radius:5px}
+.ds{position:absolute;inset:12%;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-content:center}
+.ds div{background:var(--surface);border-radius:12px;height:52px;box-shadow:0 6px 18px rgba(43,26,51,.12)}
+.ds div:nth-child(1){background:var(--accent);transition:background .3s}.ds div:nth-child(5){border-radius:999px}.ds div:nth-child(6){height:52px;background:var(--ink)}
+
+
+/* Créations personnelles : bande aubergine, identique en clair et en sombre */
+.art{background:#2B1A33;color:#F7ECF0;border:0}
+.art h2{max-width:22ch}
+.art .intro{max-width:52ch;color:#D9C5DE;margin:-1.25rem 0 2.5rem}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+.tile{border-radius:18px;overflow:hidden;display:grid;place-items:center;color:#2B1A33;font-family:var(--display);font-weight:600;position:relative}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.t1{aspect-ratio:4/5;background:#F2A65A}.t2{aspect-ratio:1/1;background:#9CC4AE}.t3{aspect-ratio:4/6;background:#E9B7CB}
+.t4{aspect-ratio:1/1;background:#C9BBF0}.t5{aspect-ratio:4/5;background:#F6D58E}.t6{aspect-ratio:4/4.5;background:#E8806F}
+.art .btn{margin-top:2.25rem;background:#F2A65A;color:#2B1A33}
+
+/* Méthode */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--ink);padding-top:1rem}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:2.4rem;color:var(--accent);display:block;line-height:1;margin-bottom:.5rem;transition:color .3s}
+.steps h3{font-size:1.3rem;font-weight:600;margin-bottom:.4rem}
+.steps p{color:var(--muted);font-size:1rem}
+
+/* À propos */
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,5rem)}
+.about p{margin-bottom:1rem;max-width:62ch}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 2rem;margin-top:1.5rem}
+.skills h3{font-size:1.05rem;font-weight:600;margin-bottom:.4rem}
+.skills ul{list-style:none;padding:0;color:var(--muted);font-size:1rem}
+
+/* Contact */
+.contact{text-align:left}
+.contact a.big{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,6.5vw,5rem);letter-spacing:-.035em;line-height:1;text-decoration:none;display:inline-block;border-bottom:.08em solid var(--accent);transition:border-color .3s,color .2s}
+.contact a.big:hover{color:var(--accent)}
+.contact ul{list-style:none;padding:0;display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;font-weight:500}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+
+@media (max-width:820px){
+  .gallery{grid-template-columns:1fr 1fr}
+  .hero-row,.case,.case:nth-child(even),.about{grid-template-columns:1fr}
+  .case:nth-child(even) .shot{order:0}
+  .steps{grid-template-columns:1fr 1fr}
+  nav .links{gap:1rem;font-size:.95rem}
+}
+@media (max-width:480px){.steps,.skills{grid-template-columns:1fr}nav .links a:nth-child(2),nav .links a:nth-child(3){display:none}nav{flex-wrap:wrap;gap:.5rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Navigation principale">
+    <span class="mark">Manon Leconte-Dauris</span>
+    <div class="links">
+      <a href="#projets">Projets</a>
+      <a href="#methode">Méthode</a>
+      <a href="#creations">Créations personnelles</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Manon<br>Leconte-<wbr>Dauris<span>Product designer</span></h1>
+    <div class="hero-row">
+      <div>
+        <!-- À PERSONNALISER : une phrase qui résume sa valeur -->
+        <p class="lead">Je conçois des produits numériques clairs, utiles et agréables à utiliser, de la recherche utilisateur jusqu’au design system.</p>
+        <div class="cta">
+          <a class="btn" href="#projets">Voir mes projets</a>
+          <a class="btn ghost" href="#contact">Me contacter</a>
+        </div>
+      </div>
+      <div class="theme">
+        <b>Choisissez une couleur d’accent</b>
+        <p>Un petit aperçu de la façon dont je pense les thèmes.</p>
+        <div class="swatches" role="group" aria-label="Couleur d’accent">
+          <button type="button" data-a="#C2305F" data-s="#F9D9E3" aria-label="Framboise" aria-pressed="true" style="background:#C2305F"></button>
+          <button type="button" data-a="#2F7A5E" data-s="#D5EBDD" aria-label="Vert sapin" aria-pressed="false" style="background:#2F7A5E"></button>
+          <button type="button" data-a="#6B4BD6" data-s="#E3DBFA" aria-label="Iris" aria-pressed="false" style="background:#6B4BD6"></button>
+          <button type="button" data-a="#E58A2B" data-s="#FCE3C4" data-ink="#2B1A33" aria-label="Abricot" aria-pressed="false" style="background:#E58A2B"></button>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+  <section id="projets" class="band">
+    <div class="wrap">
+      <h2>Projets sélectionnés</h2>
+      <div class="cases">
+
+        <!-- PROJET 1 : remplacer titre, texte, tags, résultat et la maquette (.shot) par une vraie capture <img> -->
+        <article class="case">
+          <div class="shot" aria-hidden="true"><div class="phone p1"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div><div class="phone p2"><i class="b"></i><i class="a"></i><i class="d"></i><i class="c"></i></div></div>
+          <div>
+            <h3>[Nom du projet 1] : refonte du parcours d’inscription</h3>
+            <p>Contexte en deux phrases : le problème rencontré par les utilisateurs, et ce que Manon a été chargée de résoudre.</p>
+            <ul class="tags"><li>Recherche utilisateur</li><li>Prototypage</li><li>Tests d’usabilité</li></ul>
+            <p class="result">Résultat : [+XX %] de conversion en [X] mois.</p>
+          </div>
+        </article>
+
+        <!-- PROJET 2 -->
+        <article class="case">
+          <div class="shot" aria-hidden="true"><div class="dash"><div class="side"></div><div class="main"><div class="top"></div><div class="bars"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:85%"></i><i style="height:70%"></i></div></div></div></div>
+          <div>
+            <h3>[Nom du projet 2] : tableau de bord pour les équipes</h3>
+            <p>Contexte en deux phrases : qui utilise le produit, quelle décision il doit aider à prendre, et comment la solution a été trouvée.</p>
+            <ul class="tags"><li>UX research</li><li>Design d’interface</li><li>Collaboration avec les développeurs</li></ul>
+            <p class="result">Résultat : [XX %] de temps gagné sur [la tâche principale].</p>
+          </div>
+        </article>
+
+        <!-- PROJET 3 -->
+        <article class="case">
+          <div class="shot" aria-hidden="true"><div class="ds"><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+          <div>
+            <h3>[Nom du projet 3] : création d’un design system</h3>
+            <p>Contexte en deux phrases : pourquoi l’équipe en avait besoin et ce que Manon a mis en place (composants, règles, documentation).</p>
+            <ul class="tags"><li>Design system</li><li>Figma</li><li>Accessibilité</li></ul>
+            <p class="result">Résultat : [XX] composants adoptés par [X] équipes.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="methode">
+    <div class="wrap">
+      <h2>Comment je travaille</h2>
+      <ol class="steps">
+        <li><h3>Comprendre</h3><p>Entretiens, observation et analyse des données pour poser le bon problème.</p></li>
+        <li><h3>Explorer</h3><p>Ateliers, parcours et maquettes rapides pour comparer plusieurs pistes.</p></li>
+        <li><h3>Tester</h3><p>Prototypes cliquables testés avec de vrais utilisateurs avant tout développement.</p></li>
+        <li><h3>Livrer</h3><p>Spécifications précises et suivi avec les développeurs jusqu’à la mise en ligne.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="creations" class="art">
+    <div class="wrap">
+      <h2>Créations personnelles</h2>
+      <p class="intro">En dehors du travail, je dessine. C’est là que je garde l’œil entraîné : la couleur, la composition, le détail.</p>
+      <!-- Pour chaque dessin : remplacer le texte du .tile par <img src="dessin1.jpg" alt="Description du dessin"> -->
+      <div class="gallery">
+        <div class="tile t1">Dessin 1</div><div class="tile t2">Dessin 2</div><div class="tile t3">Dessin 3</div>
+        <div class="tile t4">Dessin 4</div><div class="tile t5">Dessin 5</div><div class="tile t6">Dessin 6</div>
+      </div>
+      <!-- Remplacer REMPLACER par son Instagram, Behance ou autre galerie -->
+      <a class="btn" href="https://www.instagram.com/REMPLACER">Voir toutes mes créations</a>
+    </div>
+  </section>
+
+  <section id="a-propos" class="band">
+    <div class="wrap about">
+      <h2>À propos</h2>
+      <div>
+        <!-- À PERSONNALISER : parcours, valeurs, ce qu’elle cherche -->
+        <p>Product designer, j’aime les problèmes qui paraissent simples et qui ne le sont jamais. Je pars des usages réels pour construire des interfaces qui se comprennent du premier coup.</p>
+        <p>J’ai travaillé sur [secteurs / types de produits] et je recherche aujourd’hui un poste de product designer dans une équipe qui place les utilisateurs au centre des décisions.</p>
+        <div class="skills">
+          <div><h3>Design</h3><ul><li>Recherche utilisateur</li><li>Architecture de l’information</li><li>Design d’interface</li><li>Design system</li></ul></div>
+          <div><h3>Outils</h3><ul><li>Figma</li><li>FigJam</li><li>Maze / UserTesting</li><li>Notion, Jira</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Travaillons ensemble</h2>
+      <a class="big" href="mailto:prenom.nom@exemple.fr">prenom.nom@exemple.fr</a>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/REMPLACER">LinkedIn</a></li>
+        <li><a href="https://REMPLACER">CV en PDF</a></li>
+        <li><a href="https://REMPLACER">Figma / Behance</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Manon Leconte-Dauris</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btns=document.querySelectorAll(".swatches button");
+  btns.forEach(function(b){
+    b.addEventListener("click",function(){
+      root.style.setProperty("--accent",b.dataset.a);
+      root.style.setProperty("--soft",b.dataset.s);
+      root.style.setProperty("--accent-ink",b.dataset.ink||"#FFFFFF");
+      btns.forEach(function(o){o.setAttribute("aria-pressed",o===b)});
+    });
+  });
+})();
+</script>
+</body>
+</html>
